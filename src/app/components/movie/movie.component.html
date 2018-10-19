@@ -1,0 +1,72 @@
+<div class="jumbotron jumbotron-fluid" 
+  [ngStyle]=" { 'background-image' : 'url(' + imageUrl + ')' }">
+  <div class="custom-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-fluid rounded" [src]="infoMovie.poster_path | convertImgToUrl:'poster_path' " [alt]="infoMovie.original_title">
+        </div>
+        <div class="col-md-9">
+          <h2 class="display-4">{{infoMovie.original_title}}</h2>
+          <p class="text-justify">{{infoMovie.overview}}</p>
+        </div>
+      </div>
+      <div class="row" *ngIf="infoMovie.homepage">
+        <div class="col-md-3 mt-2">
+          <a [href]="infoMovie.homepage" class="btn btn-block btn-outline-light" target="_blank">Go website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container ">
+  <div class="row">
+    <div class="col-md-10 mt-2" id="topCast">
+      <h3>Top cast</h3>
+
+      <div class="row">
+        <div class="col-md-2" *ngFor="let cast of infoCast">
+         <div class="card pointer" (click)="watchActor(cast.id)">
+            <img class="card-img-top" [src]="cast.profile_path | convertImgToUrl:'profile_path'" [alt]="cast.name">
+            <div class="card-body">
+              <h5 class="card-title">{{cast.name}}</h5>
+              <p class="card-text">{{cast.character}}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2 mt-2" id="facts">
+      <h3>Facts</h3>
+      <h5>Release information</h5>
+      <p>{{infoMovie.release_date}}</p>
+      
+      <h5>Tagline</h5>
+      <p>{{infoMovie.tagline}}</p>
+    
+      <h5>Original language</h5>
+      <p>{{infoMovie.original_language}}</p>
+
+      <h5>Runtime</h5>
+      <p>{{infoMovie.runtime}} minutes</p>
+
+      <h5>Budget</h5>
+      <p>{{infoMovie.budget | currency:'USD':'symbol':'1.0-2'}}</p>
+
+      <h5>Revenue</h5>
+      <p>{{infoMovie.revenue| currency:'USD':'symbol':'1.0-2'}}</p>
+
+      <h5>Homepage</h5>
+      <p>
+        <a [href]="infoMovie.homepage" target="_blank">{{infoMovie.homepage}}</a>
+      </p>
+
+      <h3>Genres</h3>
+      <a *ngFor="let genre of infoMovie.genres" class="btn btn-outline-dark btn-sm mr-1 mb-1">{{genre.name}}</a>
+
+    </div>
+  </div>
+</div>

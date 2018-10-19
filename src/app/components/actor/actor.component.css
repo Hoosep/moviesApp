@@ -1,0 +1,30 @@
+#infoActor{
+  color:#FFF;
+}
+
+#detailsActor h3{    
+  font-size: 1.1em;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  margin-bottom:1.1em;
+}
+
+#detailsActor h5{
+  font-weight: 600;
+  font-size:0.95em;
+  margin-bottom: 0;
+}
+
+#detailsActor h5 + p,
+#detailsActor h5 + p > span {
+  font-size:0.9em;
+}
+
+.card .card-body{
+  padding:0.5em 0;
+}
+
+.card h5.card-title{
+  font-size:0.75em;
+  margin:0;
+}

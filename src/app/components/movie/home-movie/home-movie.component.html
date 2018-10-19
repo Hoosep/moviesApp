@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <div class="card-columns">
+    <div class="card" *ngFor="let popularMovie of popularMovies">
+      <img class="card-img-top" [src]="popularMovie.poster_path | convertImgToUrl:'poster_path' " width="100px" [alt]="popularMovie.original_title">
+      <div class="card-body">
+        <h5 class="card-title">{{ popularMovie.original_title }}</h5>
+        <p class="align-middle text-right mb-0 releaseDate">Release date: {{ popularMovie.release_date}}</p>
+        <p class="card-text">{{ popularMovie.overview | shortOverview }}</p>
+        <p>
+          <a 
+              class="btn btn-block btn-outline-success mb-1"
+              href="movie/{{popularMovie.id}}"
+              >Ver más</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
