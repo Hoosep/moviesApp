@@ -16,6 +16,7 @@ import { ShortOverviewPipe } from './pipes/short-overview.pipe';
 import { MovieComponent } from './components/movie/movie.component';
 import { ActorComponent } from './components/actor/actor.component';
 import { HomeMovieComponent } from './components/movie/home-movie/home-movie.component';
+import { HomeActorComponent } from './components/actor/home-actor/home-actor.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomeMovieComponent } from './components/movie/home-movie/home-movie.com
     ShortOverviewPipe,
     MovieComponent,
     ActorComponent,
-    HomeMovieComponent
+    HomeMovieComponent,
+    HomeActorComponent
   ],
   imports: [
     BrowserModule,

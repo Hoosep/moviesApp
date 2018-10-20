@@ -22,8 +22,12 @@ export class ConvertImgToUrlPipe implements PipeTransform {
         img = `https://image.tmdb.org/t/p/w300_and_h450_bestv2${url}`;
         break;
       default:
-          img = 'assets/img/no_photo.gif';
+          img = 'assets/img/no-photo-available.jpg';
         break;
+    }
+
+    if (!url) {
+      img = 'assets/img/shared/no-photo-available.jpg';
     }
 
     return img;

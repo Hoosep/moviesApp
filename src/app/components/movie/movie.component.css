@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
 @import url(https://fonts.googleapis.com/css?family=Squada+One);
 
+@media (max-width: 575.98px) {
+  h2{
+    padding-top:0em!important;
+  }
+}
+
 h2{
   font-family: 'Open Sans', sans-serif;
   color: #FFF;
