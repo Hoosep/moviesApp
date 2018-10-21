@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <h2 class="display-6">Movies of {{titleGenre | titlecase }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    
+    <div class="col-6 col-md-3"  *ngFor="let genre of moviesGenre">
+      <div class="card mb-2 pointer">
+        
+        <img class="card-img-top" [src]="genre.poster_path | convertImgToUrl:'poster_path' " [alt]="genre.original_title">
+        <div class="card-body">
+          <h5 class="card-title">{{ genre.original_title }}</h5>
+          <p class="card-text">{{ genre.overview | shortOverview }}</p>
+          <p>
+            <a 
+                class="btn btn-block btn-outline-success mb-1"
+                href="movie/{{genre.id}}"
+                >Ver más</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

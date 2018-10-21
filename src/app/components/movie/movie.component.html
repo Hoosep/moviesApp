@@ -65,7 +65,7 @@
       </p>
 
       <h3>Genres</h3>
-      <a *ngFor="let genre of infoMovie.genres" class="btn btn-outline-dark btn-sm mr-1 mb-1">{{genre.name}}</a>
+      <a *ngFor="let genre of infoMovie.genres" (click)="watchMoviesByGenre(genre.id, genre.name)" class="btn btn-outline-dark btn-sm mr-1 mb-1 pointer">{{genre.name}}</a>
 
     </div>
   </div>

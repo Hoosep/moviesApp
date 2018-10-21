@@ -64,5 +64,13 @@ export class MoviesService {
                .pipe( map ( data => data['results']));
   }
 
+  getMoviesByGenre(id: string){
+   let url = `${this.movieURL}/discover/movie?api_key=${this.apiKEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`;
+   
+   return this.http
+              .get(url)
+              .pipe( map ( data => data['results'])); 
+  }
+
 
 }

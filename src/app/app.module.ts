@@ -17,6 +17,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { ActorComponent } from './components/actor/actor.component';
 import { HomeMovieComponent } from './components/movie/home-movie/home-movie.component';
 import { HomeActorComponent } from './components/actor/home-actor/home-actor.component';
+import { GenreComponent } from './components/genre/genre.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomeActorComponent } from './components/actor/home-actor/home-actor.com
     MovieComponent,
     ActorComponent,
     HomeMovieComponent,
-    HomeActorComponent
+    HomeActorComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,

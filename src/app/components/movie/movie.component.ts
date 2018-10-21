@@ -35,7 +35,6 @@ export class MovieComponent implements OnInit {
   getInformationMovie(id:string){
     this.moviesService.getMovie(id)
         .subscribe( data => {
-          console.log(data);
           this.infoMovie = data;
           this.imageUrl = ConvertImgToUrlPipe.prototype.transform(this.infoMovie['backdrop_path'], 'backdrop_path');
         });
@@ -44,7 +43,6 @@ export class MovieComponent implements OnInit {
   getInformationCast(id:string){
     this.moviesService.getPrincipalCast(id)
         .subscribe(data => {
-          console.log(data);
           this.infoCast = data;
         });
   }
@@ -53,6 +51,10 @@ export class MovieComponent implements OnInit {
 
   watchActor(id: string){
     this.router.navigate(['/actor', id]);
+  }
+
+  watchMoviesByGenre(id: string, nameGenre: string){
+    this.router.navigate(['genre', id, nameGenre]);
   }
 
 }
