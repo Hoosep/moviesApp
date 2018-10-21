@@ -56,5 +56,13 @@ export class MoviesService {
                .pipe( map ( data => data['cast'].slice(0, 8)));
   }
 
+  getActorsPopular(){
+    let url = `${this.movieURL}/person/popular?api_key=${this.apiKEY}`;
+
+    return this.http
+               .get(url)
+               .pipe( map ( data => data['results']));
+  }
+
 
 }

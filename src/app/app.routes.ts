@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { ActorComponent} from './components/actor/actor.component';
 import { HomeMovieComponent } from './components/movie/home-movie/home-movie.component';
+import { HomeActorComponent } from './components/actor/home-actor/home-actor.component';
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
@@ -10,6 +11,7 @@ export const ROUTES: Routes = [
       path: 'movie/:id', component: MovieComponent },
     { path: 'movies', component: HomeMovieComponent },
     { path: 'actor/:id', component: ActorComponent },
+    { path: 'actor', component: HomeActorComponent },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

@@ -1,3 +1,17 @@
-<p>
-  home-actor works!
-</p>
+<div class="container mt-3">
+	<div class="row mb-3">
+		<div class="col-md-12">
+			<h2 class="display-6">Popular actors</h2>
+		</div>
+	</div>
+  <div class="row">
+    <div class="col-6 col-md-3"  *ngFor="let actor of popularActors" (click)="watchActor(actor.id)">
+      <div class="card mb-2 pointer">
+        <img class="card-img-top" [src]="actor.profile_path | convertImgToUrl:'profile_path' " [alt]="actor.name">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ actor.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
